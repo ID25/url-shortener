@@ -1,0 +1,49 @@
+$color_outrageous_orange_approx: #f16534;
+$color_cinnabar_approx: #ed3535;
+$white: white;
+$font_0: Open Sans;
+
+.root {
+	margin: 50px 15px;
+	font-family: $font_0;
+	font-size: 14px;
+
+  .shorten_form {
+  	width: 100%;
+  	justify-content: center;
+  	display: inherit;
+  	margin-top: 200px;
+  	text-align: center;
+  }
+
+  .url_input {
+  	width: 60%;
+  	padding: 15px 10px;
+  	border: 1px solid $color_outrageous_orange_approx;
+  	border-radius: 5px 0 0 5px;
+  	border-right: 0;
+  	font-size: 14px;
+  	color: $color_outrageous_orange_approx;
+  }
+
+  .submit_btn {
+  	background-image: linear-gradient(-111deg, $color_outrageous_orange_approx 4%, $color_cinnabar_approx 100%);
+  	border: 1px solid $color_outrageous_orange_approx;
+  	border-radius: 0 5px 5px 0;
+  	color: $white;
+  	font-weight: bold;
+  	font-size: 15px;
+  	width: 10%;
+  	min-width: 80px;
+  	text-transform: uppercase;
+  	letter-spacing: .5px;
+  	cursor: pointer;
+  	padding: 14px 10px 15px;
+  }
+
+  .cross_svg {
+  	margin: 0 9px 0 -23px;
+  	padding: 0;
+  	cursor: pointer;
+  }
+}
