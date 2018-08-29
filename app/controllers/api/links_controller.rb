@@ -1,3 +1,5 @@
+require 'geocoder'
+
 class Api::LinksController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :create
 
@@ -7,8 +9,9 @@ class Api::LinksController < ApplicationController
   end
 
   def show
-    path = link ? link.original_url : :root
-    redirect_to path
+    redirect_to :root unless link
+    link.track_visitor(request.location.data)
+    redirect_to link.original_url
   end
 
   private

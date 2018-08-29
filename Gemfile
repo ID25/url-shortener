@@ -18,6 +18,7 @@ gem 'webpacker'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
+gem 'geocoder', '~> 1.5.0', require: false
 gem 'rack-cors'
 
 # Use ActiveModel has_secure_password
