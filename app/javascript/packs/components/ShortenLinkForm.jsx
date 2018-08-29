@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { generateShortCode } from '../utils/shortCodeGenerator';
+import { linkValidator } from '../utils/linkValidator';
 
 export default class ShortenLinkForm extends Component {
   state = {
@@ -11,7 +12,7 @@ export default class ShortenLinkForm extends Component {
   };
 
   handleSubmit = (e) => {
-    if (this.state.original_url.length != 0) {
+    if (linkValidator(this.state.original_url)) {
       let short_code = generateShortCode();
 
       this.sendShortenLink(short_code);
