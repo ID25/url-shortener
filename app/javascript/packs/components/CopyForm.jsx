@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import CrossSvg from 'images/cross';
 
 export default class CopyForm extends Component {
@@ -16,8 +16,8 @@ export default class CopyForm extends Component {
     const { shorten_url, original_url, toggleForm } = this.props;
 
     return (
-      <div className="shorten_form">
-        <form onSubmit={this.copyToClipboard}>
+      <Fragment>
+        <form onSubmit={this.copyToClipboard} className="shorten_form">
           <input type="text" readOnly value={shorten_url} className="url_input"/>
           <img src={CrossSvg} className="cross_svg" onClick={toggleForm}/>
           <input type="submit" value='Copy' className="submit_btn"/>
@@ -26,7 +26,7 @@ export default class CopyForm extends Component {
             <a href={shorten_url} target="_blank" className="shortening_link">{original_url}</a>
             <p className="shortening_text">shortening</p>
           </div>
-      </div>
+      </Fragment>
     );
   }
 }

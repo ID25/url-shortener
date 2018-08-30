@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import ShortenLinkForm from './components/ShortenLinkForm';
 import CopyForm from './components/CopyForm';
-import LogoSvg from 'images/logo';
 
 export default class App extends Component {
   state = {
@@ -33,10 +32,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="root">
-        <img src={LogoSvg} className="logo_svg"/>
+      <Fragment>
         {this.renderForm()}
-      </div>
+      </Fragment>
     )
   }
 }

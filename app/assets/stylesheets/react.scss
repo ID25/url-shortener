@@ -6,73 +6,76 @@ $color_grey: #9B9B9B;
 $white: white;
 $font_0: 'Open Sans', sans-serif;
 
-.root {
+.app {
+	margin: 0;
 	font-family: $font_0;
 	font-size: 14px;
 
-	.logo_svg {
+	.logo {
 		padding-top: 50px;
 		padding-left: 40px;
 	}
 
-  .shorten_form {
-  	width: 100%;
-  	justify-content: center;
-  	display: inherit;
-  	margin-top: 200px;
-  	text-align: center;
-  }
+	#react {
+	  .shorten_form {
+	  	width: 100%;
+	  	justify-content: center;
+	  	display: inherit;
+	  	margin-top: 200px;
+	  	text-align: center;
+	  }
 
-  .url_input {
-  	width: 60%;
-  	padding: 15px 10px;
-  	border: 1px solid $color_outrageous_orange_approx;
-  	border-radius: 5px 0 0 5px;
-  	border-right: 0;
-  	font-size: 14px;
-  	color: $color_outrageous_orange_approx;
-  }
+	  .url_input {
+	  	width: 60%;
+	  	padding: 15px 10px;
+	  	border: 1px solid $color_outrageous_orange_approx;
+	  	border-radius: 5px 0 0 5px;
+	  	border-right: 0;
+	  	font-size: 14px;
+	  	color: $color_outrageous_orange_approx;
+	  }
 
-  .submit_btn {
-  	background-image: linear-gradient(-111deg, $color_outrageous_orange_approx 4%, $color_cinnabar_approx 100%);
-  	border: 1px solid $color_outrageous_orange_approx;
-  	border-radius: 0 5px 5px 0;
-  	color: $white;
-  	font-weight: bold;
-  	font-size: 15px;
-  	width: 10%;
-  	min-width: 80px;
-  	text-transform: uppercase;
-  	letter-spacing: .5px;
-  	cursor: pointer;
-  	padding: 14px 10px 15px;
-  }
+	  .submit_btn {
+	  	background-image: linear-gradient(-111deg, $color_outrageous_orange_approx 4%, $color_cinnabar_approx 100%);
+	  	border: 1px solid $color_outrageous_orange_approx;
+	  	border-radius: 0 5px 5px 0;
+	  	color: $white;
+	  	font-weight: bold;
+	  	font-size: 15px;
+	  	width: 10%;
+	  	min-width: 80px;
+	  	text-transform: uppercase;
+	  	letter-spacing: .5px;
+	  	cursor: pointer;
+	  	padding: 14px 10px 15px;
+	  }
 
-  .cross_svg {
-  	margin: 0 9px 0 -23px;
-  	padding: 0;
-  	cursor: pointer;
-  }
+	  .cross_svg {
+			margin: 17px 0px 0px -26px;
+	  	cursor: pointer;
+			position: absolute;
+	  }
 
-	.shortening {
-		padding: 10px;
-		font-size: 16px;
+		.shortening {
+			margin: 15px;
+    	font-size: 16px;
+    	text-align: center;
 
-		.shortening_text  {
-			color: $color_grey;
-			display: inline;
-			padding: 0px 0px 0px 10px;
-		}
+			.shortening_text  {
+				color: $color_grey;
+				display: inline;
+				padding: 0px 0px 0px 10px;
+			}
 
-		.shortening_link {
-			color: $color_grey;
-			text-decoration: none;
+			.shortening_link {
+				color: $color_grey;
+				text-decoration: none;
 
-			&:hover {
-				color: $color_outrageous_orange_approx;
-				text-decoration: underline;
+				&:hover {
+					color: $color_outrageous_orange_approx;
+					text-decoration: underline;
+				}
 			}
 		}
 	}
-
 }
