@@ -9,7 +9,7 @@ class Api::LinksController < ApplicationController
   end
 
   def show
-    redirect_to :root unless link
+    return redirect_to :root unless link
     link.track_visitor(request.location.data)
     redirect_to link.original_url
   end

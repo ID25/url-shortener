@@ -1,5 +1,6 @@
 $color_outrageous_orange_approx: #f16534;
 $color_cinnabar_approx: #ed3535;
+$color_grey: #9B9B9B;
 $white: white;
 $font_0: Open Sans;
 
@@ -46,4 +47,26 @@ $font_0: Open Sans;
   	padding: 0;
   	cursor: pointer;
   }
+
+	.shortening {
+		padding: 10px;
+		font-size: 16px;
+
+		.shortening_text  {
+			color: $color_grey;
+			display: inline;
+			padding: 0px 0px 0px 10px;
+		}
+
+		.shortening_link {
+			color: $color_grey;
+			text-decoration: none;
+
+			&:hover {
+				color: $color_outrageous_orange_approx;
+				text-decoration: underline;
+			}
+		}
+	}
+
 }

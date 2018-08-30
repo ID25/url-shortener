@@ -6,25 +6,28 @@ import LogoSvg from 'images/logo';
 export default class App extends Component {
   state = {
     url_shorted: false,
-    shorten_link: ''
+    shorten_url: '',
+    original_url: ''
   };
 
   toggleForm = () => {
     this.setState({ url_shorted: !this.state.url_shorted });
   };
 
-  updateShortenLink = (link) => {
-    this.setState({ shorten_link: link });
-  }
+  updateLinks = (links) => { this.setState(links); }
 
   renderForm = () => {
     if (this.state.url_shorted) {
       return (
-        <CopyForm shorten_link={this.state.shorten_link} toggleForm={this.toggleForm}/>
+        <CopyForm
+          shorten_url={this.state.shorten_url}
+          original_url={this.state.original_url}
+          toggleForm={this.toggleForm}
+        />
       );
     }
     return (
-      <ShortenLinkForm toggleForm={this.toggleForm} updateShortenLink={this.updateShortenLink}/>
+      <ShortenLinkForm toggleForm={this.toggleForm} updateLinks={this.updateLinks}/>
     );
   }
 

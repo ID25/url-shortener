@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { generateShortCode } from '../utils/shortCodeGenerator';
-import { linkValidator } from '../utils/linkValidator';
+import { generateShortCode, linkValidator } from '../utils/utils';
 
 export default class ShortenLinkForm extends Component {
   state = {
@@ -11,19 +10,29 @@ export default class ShortenLinkForm extends Component {
     this.setState({ original_url: e.target.value });
   };
 
+  updateLinksState = (short_code) => {
+    let links = {
+      shorten_url: `${window.location.origin}/${short_code}`,
+      original_url: this.state.original_url
+    }
+
+    this.props.updateLinks(links);
+  };
+
   handleSubmit = (e) => {
     if (linkValidator(this.state.original_url)) {
       let short_code = generateShortCode();
 
-      this.sendShortenLink(short_code);
+      this.postShortenLink(short_code);
 
-      this.props.updateShortenLink(`${window.location.origin}/${short_code}`);
+      this.updateLinksState(short_code);
+
       this.props.toggleForm();
     }
     e.preventDefault();
   };
 
-  sendShortenLink = (short_code) => {
+  postShortenLink = (short_code) => {
     let body = {
       original_url: this.state.original_url,
       short_code: short_code

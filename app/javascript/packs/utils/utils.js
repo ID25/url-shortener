@@ -1,3 +1,8 @@
+export function linkValidator(link) {
+  const regex = /(((https?:\/\/)|(www\.))[^\s]+)/g;
+  return link.length != 0 && regex.test(link);
+};
+
 export function generateShortCode() {
   let text = '';
   let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
