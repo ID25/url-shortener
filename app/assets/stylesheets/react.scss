@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 $color_outrageous_orange_approx: #f16534;
 $color_cinnabar_approx: #ed3535;
@@ -7,9 +7,13 @@ $white: white;
 $font_0: 'Open Sans', sans-serif;
 
 .root {
-	margin: 50px 15px;
 	font-family: $font_0;
 	font-size: 14px;
+
+	.logo_svg {
+		padding-top: 50px;
+		padding-left: 40px;
+	}
 
   .shorten_form {
   	width: 100%;
