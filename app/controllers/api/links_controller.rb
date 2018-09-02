@@ -1,24 +1,15 @@
-require 'geocoder'
-
-class Api::LinksController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: :create
-
+class Api::LinksController < ActionController::API
   def create
-    Link.create(link_params)
-    head :ok
-  end
-
-  def show
-    return redirect_to :root unless link
-    link.track_visitor(request.location.data)
-    redirect_to link.original_url
+    link = Link.new(link_params)
+    if link.valid?
+      link.save
+      head :ok
+    else
+      render json: link.errors.full_messages, status: 400
+    end
   end
 
   private
-
-  def link
-    @link = Link.find_by(short_code: link_params[:short_code])
-  end
 
   def link_params
     params.permit(:original_url, :short_code)
